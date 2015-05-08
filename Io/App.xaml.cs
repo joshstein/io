@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using System.Windows.Media;
+using FirstFloor.ModernUI.Presentation;
 
 namespace Io
 {
@@ -13,5 +9,11 @@ namespace Io
     /// </summary>
     public partial class App : Application
     {
+        private void this_Startup(object sender, StartupEventArgs e)
+        {
+            // set up MUI theme
+            Color ioAccentColor = (Color)App.Current.FindResource("IoAccentColor");
+            AppearanceManager.Current.AccentColor = ioAccentColor;
+        }
     }
 }
